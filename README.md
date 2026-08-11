@@ -427,9 +427,18 @@ Se verificó que la aplicación pudiera accederse mediante la URL pública de Am
 
 # Estructura del proyecto
 
+# Estructura del proyecto
+
 La estructura principal del proyecto es:
 
 inventario-taller-aws/
+
+    backend/
+
+        server.js
+        db.js
+        package.json
+        package-lock.json
 
     frontend/
 
@@ -437,22 +446,19 @@ inventario-taller-aws/
         app.js
         style.css
 
-    server.js
-    db.js
-    package.json
-    package-lock.json
+    database/
+
     productos.sql
     README.md
+    .gitignore
+
+El directorio backend contiene la API REST y la lógica del servidor.
 
 El directorio frontend contiene la interfaz gráfica.
 
-El archivo server.js contiene la API REST y la lógica del backend.
+El directorio database contiene los archivos relacionados con la base de datos.
 
-El archivo db.js contiene la configuración de conexión con Amazon RDS mediante variables de entorno.
-
-El archivo package.json contiene las dependencias utilizadas por Node.js.
-
-El archivo productos.sql contiene la estructura documentada de la base de datos.
+El archivo productos.sql contiene la estructura y datos de ejemplo utilizados para la base de datos.
 
 El README.md contiene la documentación del proyecto.
 
