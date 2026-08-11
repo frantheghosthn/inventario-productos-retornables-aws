@@ -1,0 +1,492 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Inventario de Bebidas Retornables</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==========================================
+         FONDO DECORATIVO
+    =========================================== -->
+
+    <div class="burbujas">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- ==========================================
+         ENCABEZADO
+    =========================================== -->
+
+    <header class="hero">
+
+        <div class="hero-contenido">
+
+            <div class="hero-icono">
+                🥤
+            </div>
+
+            <div>
+
+                <h1>
+                    Inventario de Bebidas
+                    <span>Retornables</span>
+                </h1>
+
+                <p>
+                    Control inteligente de productos,
+                    existencias y envases retornables
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ==========================================
+             ESTADÍSTICAS
+        =========================================== -->
+
+        <section class="estadisticas">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icono">
+                    🥤
+                </div>
+
+                <div>
+
+                    <span>
+                        Productos
+                    </span>
+
+                    <strong id="total-productos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icono">
+                    📦
+                </div>
+
+                <div>
+
+                    <span>
+                        Productos llenos
+                    </span>
+
+                    <strong id="total-llenos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icono">
+                    ♻️
+                </div>
+
+                <div>
+
+                    <span>
+                        Envases vacíos
+                    </span>
+
+                    <strong id="total-envases">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==========================================
+             FORMULARIO
+        =========================================== -->
+
+        <section class="panel formulario-panel">
+
+
+            <div class="panel-titulo">
+
+                <div>
+
+                    <span class="mini-icono">
+                        ➕
+                    </span>
+
+                    <div>
+
+                        <h2 id="titulo-formulario">
+                            Agregar producto
+                        </h2>
+
+                        <p>
+                            Registra una nueva bebida
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form id="form-producto">
+
+
+                <input
+                    type="hidden"
+                    id="producto-id"
+                >
+
+
+                <!-- NOMBRE -->
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Nombre del producto
+                    </label>
+
+                    <div class="input-icono">
+                        🥤
+                    </div>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej. Pepsi"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MARCA -->
+
+                <div class="campo">
+
+                    <label for="marca">
+                        Marca
+                    </label>
+
+                    <div class="input-icono">
+                        🏷️
+                    </div>
+
+                    <input
+                        type="text"
+                        id="marca"
+                        placeholder="Ej. Pepsi"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+
+                <div class="campo">
+
+                    <label for="categoria">
+                        Categoría
+                    </label>
+
+                    <select
+                        id="categoria"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccionar categoría
+                        </option>
+
+                        <option value="Refresco">
+                            🥤 Refresco
+                        </option>
+
+                        <option value="Agua">
+                            💧 Agua
+                        </option>
+
+                        <option value="Jugo">
+                            🧃 Jugo
+                        </option>
+
+                        <option value="Energizante">
+                            ⚡ Energizante
+                        </option>
+
+                        <option value="Otro">
+                            🍹 Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRESENTACION -->
+
+                <div class="campo">
+
+                    <label for="presentacion">
+                        Presentación
+                    </label>
+
+                    <input
+                        type="text"
+                        id="presentacion"
+                        placeholder="Ej. Retornable 1L"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- STOCK -->
+
+                <div class="campo">
+
+                    <label for="stock-lleno">
+                        Productos llenos
+                    </label>
+
+                    <input
+                        type="number"
+                        id="stock-lleno"
+                        min="0"
+                        value="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ENVASES -->
+
+                <div class="campo">
+
+                    <label for="envases-vacios">
+                        Envases vacíos
+                    </label>
+
+                    <input
+                        type="number"
+                        id="envases-vacios"
+                        min="0"
+                        value="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PRECIO -->
+
+                <div class="campo">
+
+                    <label for="precio">
+                        Precio de venta
+                    </label>
+
+                    <input
+                        type="number"
+                        id="precio"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="campo campo-completo">
+
+                    <label for="descripcion">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        rows="3"
+                        placeholder="Información adicional del producto..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BOTONES -->
+
+                <div class="botones">
+
+                    <button
+                        type="submit"
+                        id="btn-guardar"
+                        class="btn-principal"
+                    >
+                        <span>💾</span>
+                        Guardar producto
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="btn-cancelar"
+                        class="btn-cancelar oculto"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- ==========================================
+             PRODUCTOS
+        =========================================== -->
+
+        <section class="panel productos-panel">
+
+
+            <div class="panel-titulo productos-header">
+
+                <div>
+
+                    <span class="mini-icono">
+                        🧴
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Productos disponibles
+                        </h2>
+
+                        <p>
+                            Inventario actual de bebidas
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="btn-recargar"
+                    class="btn-recargar"
+                    type="button"
+                >
+
+                    🔄
+                    Actualizar
+
+                </button>
+
+            </div>
+
+
+            <!-- MENSAJE VACÍO -->
+
+            <p
+                id="mensaje-vacio"
+                class="mensaje-vacio"
+                style="display: none;"
+            >
+
+                🥤
+
+                <br>
+
+                No hay productos registrados.
+
+            </p>
+
+
+            <!-- CONTENEDOR DE TARJETAS -->
+
+            <div
+                id="contenedor-productos"
+                class="productos-grid"
+            >
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         PIE DE PÁGINA
+    =========================================== -->
+
+    <footer>
+
+        <span>
+            🥤 Sistema de Inventario de Productos Retornables
+        </span>
+
+        <span>
+            AWS • Node.js • MySQL
+        </span>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
